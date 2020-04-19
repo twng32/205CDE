@@ -1,0 +1,16 @@
+<!--Template-->
+   {% extends 'booktemp.html' %}
+   <!--Title-->
+   {% block title %}Japanese books{% endblock %}
+   <!--Content of booklist-->
+   {% block body %}
+   <!--header-->
+    <p>Japanese Books</p>
+    <!--pandas dataframe-->
+    {{jpbookdata|safe}}
+    <!--html form direct to book details of jpbooklist-->
+    <form action="{{url_for('jpbookdetail')}}" method="post">
+	Enter Bookid:<input type="text" id="bookid" name="bookid">
+	<input type="submit" value="GO">
+</form>
+{% endblock %}

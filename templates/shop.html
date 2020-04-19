@@ -1,0 +1,68 @@
+<!--Template-->
+{% extends 'loggridtemp.html' %}
+<!--Title-->
+{% block title %}Shop{% endblock %}
+<!--css or javascript-->
+{% block head %}
+<script type="text/javascript">	
+</script>{% endblock %}
+<!--Content of shop-->
+{% block body %}
+<!--booklist-->
+    <h3>Shopping list:</h3>
+     <form action="{{url_for('shoplist')}}" method="post">
+	<div class='form-group'>
+		Books:
+		<select id="books" name="books">
+			{% for i in chibook %}
+			  <option value="{{i}}">{{i}}</option>
+			 {% endfor %}
+			{% for i in engbook %}
+			  <option value="{{i}}">{{i}}</option>
+			 {% endfor %}
+			{% for i in jpbook %}
+			  <option value="{{i}}">{{i}}</option>
+			 {% endfor %}
+			</select>
+			Quantity:
+		<input type='text' class='form-quantity' id='quantity' name='quantity'>
+
+	</div>
+	<div class='form-group' style="text-align: right;">
+		<button class='btn btn-primary'>submit</button>
+	</div>
+</form>
+<hr>
+<!--Preview orders-->
+<table style="border:1px solid">
+	 {% for i in preview %}
+  <tr>
+    <th>Order NO. :</th>
+    <td>{{i[0]}}</td>
+ </tr>
+ <tr>
+    <th>book:</th>
+    <td>{{i[1]}}</td>
+   </tr>
+   <tr>
+    <th>quantity:</th>
+    <td>{{i[2]}}</td>
+  </tr>
+
+  {% endfor %}
+</table> 
+<!--deleting orders-->
+<form action="{{url_for('delete')}}" method='post'>
+			To delete order no.:
+			<select id="orderid" name="orderid">
+			{% for i in preview %}
+			  <option value="{{i[0]}}">{{i[0]}}</option>
+			 {% endfor %}
+			</select>
+			<button class='btn btn-primary'>submit</button>
+</form>
+	<hr>
+<form action="{{url_for('info')}}">
+    <button onclick="alert('Make sure the orders are correct\nNo amendments are allowed in the next page')">Next</button>
+</form>
+{% endblock %}

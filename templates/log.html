@@ -1,0 +1,29 @@
+<!--Template-->
+{% extends 'gridtemp.html' %}
+<!--Title-->
+{% block title %}Login{% endblock %}
+<!--Content of login-->
+{% block body %}
+    <div class="login">
+      <!--header-->
+      <h1>Login</h1>
+      <!--button to sign in or login page-->
+   <form>      <p><button  class="btn btn-default" formaction="{{url_for('login')}}">Login</button>
+      <button  class="btn btn-default" formaction="{{url_for('reg')}}">Registration</button></p></form>
+      <form action="{{ url_for('login') }}" method="post">
+        <!--username-->
+        <p><label for="username">
+         Username:
+        </label>
+        <input type="text" name="username" placeholder="Username" id="username" required></p>
+        <!--password-->
+        <p><label for="password">
+          Password:
+        </label>
+        <input type="password" name="password" placeholder="Password" id="password" required></p>
+        <!--Faliure message-->
+        <div class="msg">{{ msg }}</div>
+        <input type="submit" value="Login">
+      </form>
+    </div>
+ {% endblock %}

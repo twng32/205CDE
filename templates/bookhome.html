@@ -1,0 +1,24 @@
+ <!--Template-->
+ {% extends 'booktemp.html' %}
+ <!--Title-->
+{% block title %}
+Bookshelf
+{% endblock %}
+<!--Content of bookhome-->
+ {% block body %}
+ <h1>Bookshelf</h1>
+ <article>
+ 	We gathers books from different countries bookshop, books published in their languages.
+ 	Understand different cultures by reading!
+ 	You are welcome to express you feeling towards books or recommend books to others by our discussion forum.
+ 	If the book you want is not in the booklist, feel free to let us know in the forum.
+ 	Choose a language that you are interested:
+ </article>
+ <!--buttons direct to different booklists-->
+   <form>
+   	<p><button  class="btn btn-default" formaction="{{url_for('getENbooks')}}"><img src="{{url_for('static',filename='images/engbooks.PNG')}}"></button>
+      <button  class="btn btn-default" formaction="{{url_for('getCHbooks')}}"><img src="{{url_for('static',filename='images/chibooks.PNG')}}"></button>
+      <button  class="btn btn-default" formaction="{{url_for('getJPbooks')}}"><img src="{{url_for('static',filename='images/jpbooks.PNG')}}"></button>
+  </p>
+  </form>
+ {% endblock %}

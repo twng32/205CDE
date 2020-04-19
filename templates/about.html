@@ -1,0 +1,15 @@
+  <!--Template-->
+  {% extends 'gridtemp.html' %}
+  <!--Title-->
+  {% block title %}About{% endblock %}
+  {% block body %}
+<!--Content of about-->
+<img class="aboutus" src="{{url_for('static',filename='images/aboutus.PNG')}}" id="aboutus">
+
+<article>
+	Booksora is combined by two words - 'book' and 'sora', and it has similar pronunciation as bookstore.'sora' means sky in Japanese. It is well knowned as a symbol of a place which is free and peace. We hope that customers can have a free and pleasant experience.
+</article>
+<p>Contact Us:</p>
+<p>Email:booksora@xx.com</p>
+<p>Phone:22222222</p>
+{% endblock %}

@@ -1,0 +1,15 @@
+   <!--Logged in navibar-->
+    <div class="topnavi">
+    <ul class="navibar">
+      <li><a class="navbar-logo" href="{{url_for('index')}}" style="float: left;">
+         <img class='logo' src="{{url_for('static',filename='images/logo.png')}}" alt="logo" class="logo">
+      </a></li>
+      <div class='right-nav'>
+        <li><a href="{{url_for('post')}}">Post Something</a></li>
+        <li><a href="{{url_for('shop')}}">Shop</a></li>
+        <li><a href="{{url_for('forum')}}">Forum</a></li>
+        <li><a href="{{url_for('logout')}}">Logout</a></li>
+      </div>
+      </ul>
+  </div>
+</nav>

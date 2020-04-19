@@ -1,0 +1,74 @@
+  <!--Template-->
+  {% extends 'gridtemp.html' %}
+  <!--TItle-->
+  {% block title %}Index{% endblock %}
+  <meta charset="utf-8">
+  <!--bootstrap,css,jquery-->
+  {% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+{% endblock %}
+
+{%block body%}
+
+<!--Bootstrap carousel-->
+
+<div id="bannerCarousel" class="carousel slide">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li class="item1 active"></li>
+    <li class="item2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{url_for('static',filename='images/findbooks.jpg')}}">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static',filename='images/bookshare.jpg')}}">
+    </div>
+  
+  <!-- Left and right controls -->
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#bannerCarousel">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#bannerCarousel">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+</div>
+<!--jQuery-->
+<script>
+$(document).ready(function(){
+  // Activate Carousel
+  $("#bannerCarousel").carousel();
+    
+  // Enable Carousel Indicators
+  $(".item1").click(function(){
+    $("#bannerCarousel").carousel(0);
+  });
+  $(".item2").click(function(){
+    $("#bannerCarousel").carousel(1);
+  });
+  $(".item3").click(function(){
+    $("#bannerCarousel").carousel(2);
+  });
+    
+  // Enable Carousel Controls
+  $(".carousel-control-prev").click(function(){
+    $("#bannerCarousel").carousel("prev");
+  });
+  $(".carousel-control-next").click(function(){
+    $("#bannerCarousel").carousel("next");
+  });
+});
+</script>
+{%endblock%}

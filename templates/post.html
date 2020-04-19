@@ -1,0 +1,26 @@
+<!--Template-->
+{% extends 'loggridtemp.html' %}
+<!--Title-->
+{% block title %}Post{% endblock %}
+<!--css and script-->
+{% block head %}  <script type="text/javascript">window.alert("Not to post prohibited or antipathic content ");</script>
+{% endblock %}
+<!--Content of posting a message to forum-->
+{% block body %}
+<!--header-->
+<h2>Post a message</h2>
+<!--Welcoming message-->
+<p>Welcome, {{ username }}!</p>
+  <form class="form-inline" action="{{ url_for('post') }}" method="post">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="title" class="form-control" name="title" placeholder="Title" id="title" required>
+    </div><br>
+    <div class="form-group">
+      <textarea class="form-control" name="dcontent" placeholder="Write Something Here..." id="dcontent" rows="10" cols="80" required></textarea>
+    </div>
+    <div class="msg">{{msg}}</div>
+    <button type="submit" class="btn btn-default" style="float: right;">Submit</button>
+  </form>
+  *Booksora have right to delete unpropiate content
+{% endblock %}

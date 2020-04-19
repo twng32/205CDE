@@ -1,0 +1,29 @@
+<!--Template-->
+  {% extends 'gridtemp.html' %}
+  <!--TItle-->
+  {% block title %}Registration{% endblock %}
+  <!--Content of sign in page-->
+  {% block body %}
+  <!--header-->
+   <h2>Sign Up</h2>
+   <!--button directing to login psge and sign up page-->
+   <form>      <p><button  class="btn btn-default" formaction="{{url_for('login')}}">Login</button>
+      <button  class="btn btn-default" formaction="{{url_for('reg')}}">Registration</button></p></form>
+    <!--html form of sign up-->  
+  <form class="form-inline" action="{{ url_for('reg') }}" method="post">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="username" class="form-control" name="username" placeholder="Username" id="username" required>
+    </div><br>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" name="password" placeholder="Password" id="password" required>
+    </div><br>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" name="email" placeholder="Email" id="email" required>
+    </div>
+    <div class="msg">{{msg}}</div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+  {% endblock %}

@@ -1,0 +1,36 @@
+<!--Template for pages required login-->
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Title-->
+    <title>{% block title %}{% endblock %}</title>
+    <!--css or scripts-->
+    {% block head %}{% endblock %}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/loggridtemp.css')}}">
+
+</head>
+<body>
+  <!--Grid content-->
+<div class="theGrid">
+
+  <!-- logged in navibar-->
+  <div class="outline navibar">
+  {% include 'lognavibar.html' %}
+</div>
+  <div class="outline content" style="background:url('static/images/green-line.PNG');">
+  {% block body %}{% endblock %}
+  </div>
+  <!--right hand side content-->
+  <div class="outline rightcol">
+  
+  </div>
+	<!--left hand side content-->
+  <div class="outline leftcol">
+  	
+    </div>  
+
+  <!--footer-->
+  <div class="footer">@205CDE</div>
+</div>
+</body>
+</html>

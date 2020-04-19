@@ -1,0 +1,39 @@
+<!--Template-->
+{% extends 'booktemp.html' %}
+<!--Title-->
+{% block title %}details{% endblock %}
+<!--css-->
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/bkdetails.css')}}">
+{% endblock %}
+<!--Content of bookdetails-->
+{% block body %}
+<table>
+  <tr>
+    <th>Book Title</th>
+    <th>{{output['Name']}}</th>
+  </tr>
+  <tr>
+    <td>Author</td>
+    <td>{{output['Author']}}</td>
+ 
+  </tr>
+  <tr>
+    <td>Publisher</td>
+    <td>{{output['Publisher']}}</td>
+  </tr>
+  <tr>
+    <td>ISBN</td>
+    <td>{{output['ISBN']}}</td>
+    </tr>
+  <tr>
+    <td>Price</td>
+    <td>{{output['Price']}}</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>{{output['Description']}}</td>
+  </tr>
+</table>
+
+{% endblock %}

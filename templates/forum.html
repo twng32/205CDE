@@ -1,0 +1,35 @@
+<!--Templates-->
+{% extends 'loggridtemp.html' %}
+<!--Title-->
+{% block title %}Forum{% endblock %}
+<!--css-->
+  {% block head %}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/forum.css')}}">
+  {% endblock %}
+  <!--Content of forum-->
+{% block body %}
+<!--header-->
+    <h2>Forum</h2>
+<!--retreving each records as an li until all data is posted on the html-->
+    {% for c in output %}
+    <ul class="forum-list-group">
+        <li><div class="avatar-group">
+            <img src="{{url_for('static',filename='images/icon.png')}}" alt="icon" class="avatar">
+        </div>
+        
+            <div class="forum-group">
+<!--clickable title-->
+            <p class='forum-title'><a href="{{url_for('detail',forum_id=c[0])}}">{{c[1]}}</a></p>
+<!--posted message-->
+            <p class='forum-content'>{{c[2]}}</p>
+<!--Message author details and posted time-->
+                <div class='forum-info'>
+                    <span class='forum-id'>{{c[4]}}</span>
+                    <span class='forum-author'>{{c[5]}}</span>
+                    <span class='forum-time'>{{c[3]}}</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+   {% endfor %} 
+{% endblock %}

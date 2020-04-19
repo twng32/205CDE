@@ -1,0 +1,16 @@
+<!--Template-->
+{% extends 'booktemp.html' %}
+<!--Title-->
+{% block title %}Books in Chinese{% endblock %}
+<!--Content of booklist-->
+	{% block body %}
+	<!--header-->
+	<p>Chinese Books</p>
+	<!--pandas dataframe-->
+    {{chbookdata|safe}}
+    <!--further details of book-->
+<form action="{{url_for('chibookdetail')}}" method="post">
+	Enter bookid:<input type="text" id="bookid" name="bookid">
+	<input type="submit" value ="GO">
+</form>
+{% endblock %}

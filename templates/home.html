@@ -1,0 +1,22 @@
+<!--Template-->
+{% extends 'gridtemp.html' %}
+<!--Title-->
+{% block title %}
+Home
+{% endblock %}
+<!--Content of homepage-->
+ {% block body %}
+ <h2>Home</h2>
+   	<p><img class="notice" src="{{url_for('static',filename='images/notice.PNG')}}"></p>
+   	<ul>
+  <li>Maintainence of forum will be held on every Wednesday</li>
+  <li>Convenient store list will be uploaded on this Thursday</li>
+  <li>Discounts are avaliable for this month</li>
+</ul>  
+      <p><img class="latestupdate"src="{{url_for('static',filename='images/latestupdate.PNG')}}"></p>
+      <ul>
+  <li>3 new books are avaliable on bookshelf now</li>
+  <li>Forum function avaliable!!!</li>
+  <li>New bookshelf of Japanese Books</li>
+</ul>  
+ {% endblock %}

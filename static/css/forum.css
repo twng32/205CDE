@@ -1,0 +1,38 @@
+/*css used in forum html for the table*/
+.forum-list-group ul {
+	list-style: none;
+}
+.forum-list-group li{
+	font-family: Times New Roman, serif;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+	padding: 10px;
+}
+/*round shaped icon*/
+.avatar-group{
+	width:40px;
+	height:100%;
+	float: left;
+}
+.avatar-group .avatar{
+	width:40px;
+	height:40px;
+	border-radius: 50%
+
+}
+.forum-group{
+	float: left;
+	width:660px;
+	margin-left: 10px
+}
+.forum-title a{
+	color:#259;
+	font-weight: 900;
+
+}
+.forum-info{
+	text-align:right;
+}
+.forum-info .forum-author{
+	margin-right:20px;
+}

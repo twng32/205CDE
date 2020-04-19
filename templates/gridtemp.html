@@ -1,0 +1,37 @@
+<!--Template of pages not required login-->
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Title-->
+    <title>{% block title %}{% endblock %}</title>
+    <!--css and scripts-->
+    {% block head %}{% endblock %}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/gridtemp.css')}}">
+
+</head>
+<body>
+  <!--css grid-->
+<div class="theGrid">
+
+  <!--unloggin navibar-->
+  <div class="outline navibar">
+  {% include 'navibar.html' %}
+</div>
+<!--Content of middle content-->
+  <div class="outline content" style="background:url('static/images/yellow-grid.PNG');">
+  {% block body %}{% endblock %}
+  </div>
+  <!--right hand side content-->
+  <div class="outline rightcol">
+  
+  </div>
+	<!--left hand side content-->
+  <div class="outline leftcol">
+  	
+    </div>  
+
+  <!--footer-->
+  <div class="footer">@205CDE</div>
+</div>
+</body>
+</html>

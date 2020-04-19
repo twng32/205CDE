@@ -1,0 +1,16 @@
+<!--Unlogged in navibar-->
+    <div class="topnavi">
+    <ul class="navibar">
+      <li><a class="navbar-logo" href="{{url_for('index')}}" style="float: left;">
+         <img class='logo' src="{{url_for('static',filename='images/logo.png')}}" alt="logo" class="logo">
+      </a></li>
+      <div class='right-nav'>
+        <li><a href="{{url_for('home')}}">Homepage</a></li>
+        <li><a href="{{url_for('about')}}">About</a></li>
+        <li><a href="{{url_for('bookshelf')}}">Bookshelf</a></li>
+        <li><a href="{{url_for('forum')}}">Discuss</a></li>
+        <li><a href="{{url_for('login')}}">Login</a></li>
+      </div>
+      </ul>
+  </div>
+</nav>
